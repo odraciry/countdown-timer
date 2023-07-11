@@ -1,0 +1,184 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-image: url("../images/bg-stars.svg");
+  background-color: hsl(234, 17%, 12%);
+  font-family: "Red Hat Text", sans-serif;
+  color: hsl(0, 0%, 100%);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#container {
+  text-align: center;
+  width: 100%;
+  height: 100vh;
+}
+
+h1 {
+  transform: translateY(8rem);
+  font-weight: 600;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+#box {
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#box .contador {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem;
+  width: 6rem;
+  height: 8rem;
+}
+#box .contador .text {
+  display: block;
+  margin-top: 1rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+#box .contador .numero {
+  height: 8rem;
+  width: 8rem;
+  position: relative;
+  background: none;
+  background-color: rgb(0, 0, 0);
+  box-shadow: 1px 10px 10px -1px black;
+  border-radius: 10px;
+}
+#box .contador .numero p {
+  position: absolute;
+  z-index: 2;
+  font-size: 5rem;
+  background: transparent;
+  left: 0.8rem;
+  top: 0.6rem;
+  color: hsl(345, 95%, 68%);
+  font-weight: 600;
+}
+#box .contador .numero p::after {
+  content: " ";
+  position: absolute;
+  left: -0.8rem;
+  top: 3.4rem;
+  width: 8rem;
+  height: 2px;
+  background-color: rgba(0, 0, 0, 0.245);
+  z-index: 3;
+}
+#box .contador .numero::before {
+  content: "";
+  height: 4rem;
+  background-color: hsl(235, 16%, 14%);
+  position: absolute;
+  width: 8rem;
+  transform: translateX(-4rem);
+  border-radius: 10px 10px 5px 5px;
+}
+#box .contador .numero::after {
+  content: "";
+  height: 4rem;
+  background-color: hsl(236, 21%, 26%);
+  position: absolute;
+  bottom: 0;
+  width: 8rem;
+  transform: translateX(-4rem);
+  border-radius: 5px 5px 10px 10px;
+}
+
+@keyframes move {
+  0% {
+    background-size: 100%;
+    height: 10rem;
+  }
+  25% {
+    background-size: 150%;
+    height: 11rem;
+  }
+  50% {
+    background-size: 100%;
+    height: 10rem;
+  }
+  75% {
+    background-size: 150%;
+    height: 11rem;
+  }
+  100% {
+    background-size: 100%;
+    height: 10rem;
+  }
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 10rem;
+  display: flex;
+  justify-content: center;
+  background-image: url("../images/pattern-hills.svg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  animation: move 20s ease-in-out infinite;
+}
+footer img {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: 4rem 1.5rem;
+  background: none;
+  cursor: pointer;
+  transition: 1s;
+}
+footer img:hover {
+  transform: translateY(-1rem);
+  width: 3rem;
+  height: 3rem;
+}
+
+@media screen and (max-width: 600px) {
+  #box .contador {
+    margin: 2px;
+    height: 10rem;
+  }
+  #box .contador .text {
+    margin-top: 3rem;
+    font-size: 0.7rem;
+  }
+  #box .contador .numero {
+    height: 100%;
+    width: 100%;
+  }
+  #box .contador .numero p {
+    font-size: 2rem;
+    left: 0;
+    right: 2rem;
+  }
+  #box .contador .numero p::after {
+    left: -2rem;
+    top: 5%;
+    width: 4rem;
+    height: 2px;
+    display: none;
+  }
+  #box .contador .numero::before {
+    content: "";
+    height: 2rem;
+    width: 4rem;
+  }
+  #box .contador .numero::after {
+    content: "";
+    height: 2rem;
+    width: 4rem;
+  }
+}/*# sourceMappingURL=style.css.map */
