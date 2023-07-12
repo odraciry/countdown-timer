@@ -4,20 +4,29 @@
     box-sizing: border-box;
     background-image: url('../images/bg-stars.svg');
     background-color: hsl(234, 17%, 12%);
-
     font-family: 'Red Hat Text', sans-serif;
     color: hsl(0, 0%, 100%);
+    animation: moveStars 20s ease-in-out infinite;
 }
-body{
-    margin: 0;
-    padding: 0;
+
+@keyframes moveStars {
+    0% {
+        background-size: 100%;
+    }
+    50%{
+        background-size: 300%;
+    }
+    100%{
+        background-size: 100%;
+    }
 }
 
 #container {
     text-align: center;
-    width: 100%;
+    width: auto;
     height: 100vh;
 }
+
 
 h1 {
     transform: translateY(8rem);
@@ -28,26 +37,27 @@ h1 {
 }
 
 #box {
-
     width: 100%;
     height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
+
     .contador {
+
         display: flex;
         flex-direction: column;
         align-items: center;
         margin: 2rem;
         width: 6rem;
         height: 8rem;
-           
+
         .text {
             display: block;
             margin-top: 1rem;
             text-align: center;
             text-transform: uppercase;
-            letter-spacing:3px;
+            letter-spacing: 3px;
         }
 
         .numero {
@@ -71,7 +81,8 @@ h1 {
             color: hsl(345, 95%, 68%);
             font-weight: 600;
         }
-        .numero p::after{
+
+        .numero p::after {
             content: " ";
             position: absolute;
             left: -.8rem;
@@ -110,24 +121,27 @@ h1 {
 }
 
 @keyframes move {
-    0%{
-        background-size: 100%; 
-        height: 10rem;
-    }
-    25%{
-        background-size: 150%;
-        height: 11rem;
-    }
-    50%{
+    0% {
         background-size: 100%;
         height: 10rem;
     }
-    
-    75%{
+
+    25% {
+        background-size: 150%;
+        height: 11rem;
+    }
+
+    50% {
+        background-size: 100%;
+        height: 10rem;
+    }
+
+    75% {
         background-size: 150%;
         height: 11rem
     }
-    100%{
+
+    100% {
         background-size: 100%;
         height: 10rem;
     }
@@ -143,7 +157,7 @@ footer {
     background-image: url('../images/pattern-hills.svg');
     background-repeat: no-repeat;
     background-size: 100%;
-    animation: move 20s ease-in-out infinite;
+    animation: move 30s ease-in-out infinite;
 
     img {
         width: 1.5rem;
@@ -162,43 +176,60 @@ footer {
 }
 
 @media screen and (max-width: 600px) {
-    #box{
-        .contador{
+    #box {
+        margin: 1rem auto;
+
+        .contador {
             margin: 2px;
             height: 10rem;
-            .text{
-                margin-top: 3rem;
+
+            .text {
+                margin-top: 5rem;
                 font-size: .7rem;
             }
-            .numero{
+
+            .numero {
                 height: 100%;
-                width: 100%;
-                p{
-                    font-size: 2rem;
-                    left: 0;
-                    right: 2rem;
+                width: 10rem;
+                p {
+                    font-size: 2.5rem;
+                    left: 3.5rem;
+                    top: .4rem;
                 }
-                p::after{
-                    left: -2rem;
-                    top: 5%;
-                    width: 4rem;
-                    height: 2px;
-                    display: none;
+
+                p::after {
+                    left: -5px;
+                    top: 1.6rem;
+                    width: 3.7rem;
+                    height: 1px;
                 }
             }
+
             .numero::before {
                 content: "";
                 height: 2rem;
                 width: 4rem;
-                // transform: translateX(-2rem);
+                // transform: translate(2rem, -2rem);
+                transform: translateX(-2rem);
             }
-    
+
             .numero::after {
                 content: "";
                 height: 2rem;
                 width: 4rem;
-                // transform: translateX(-2rem);
+                transform: translate(-2rem, 4rem);
+                box-shadow: 1px 10px 10px -1px black;
+
             }
+        }
+    }
+
+    footer {
+        transform: translateY(7rem);
+        background-size: 15rem;
+
+        img {
+            transform: translateY(2rem);
         }
     }
 }

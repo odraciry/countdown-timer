@@ -6,16 +6,23 @@
   background-color: hsl(234, 17%, 12%);
   font-family: "Red Hat Text", sans-serif;
   color: hsl(0, 0%, 100%);
+  animation: moveStars 20s ease-in-out infinite;
 }
 
-body {
-  margin: 0;
-  padding: 0;
+@keyframes moveStars {
+  0% {
+    background-size: 100%;
+  }
+  50% {
+    background-size: 300%;
+  }
+  100% {
+    background-size: 100%;
+  }
 }
-
 #container {
   text-align: center;
-  width: 100%;
+  width: auto;
   height: 100vh;
 }
 
@@ -130,7 +137,7 @@ footer {
   background-image: url("../images/pattern-hills.svg");
   background-repeat: no-repeat;
   background-size: 100%;
-  animation: move 20s ease-in-out infinite;
+  animation: move 30s ease-in-out infinite;
 }
 footer img {
   width: 1.5rem;
@@ -147,38 +154,50 @@ footer img:hover {
 }
 
 @media screen and (max-width: 600px) {
+  #box {
+    margin: 1rem auto;
+  }
   #box .contador {
     margin: 2px;
     height: 10rem;
   }
   #box .contador .text {
-    margin-top: 3rem;
+    margin-top: 5rem;
     font-size: 0.7rem;
   }
   #box .contador .numero {
     height: 100%;
-    width: 100%;
+    width: 10rem;
   }
   #box .contador .numero p {
-    font-size: 2rem;
-    left: 0;
-    right: 2rem;
+    font-size: 2.5rem;
+    left: 3.5rem;
+    top: 0.4rem;
   }
   #box .contador .numero p::after {
-    left: -2rem;
-    top: 5%;
-    width: 4rem;
-    height: 2px;
-    display: none;
+    left: -5px;
+    top: 1.6rem;
+    width: 3.7rem;
+    height: 1px;
   }
   #box .contador .numero::before {
     content: "";
     height: 2rem;
     width: 4rem;
+    transform: translateX(-2rem);
   }
   #box .contador .numero::after {
     content: "";
     height: 2rem;
     width: 4rem;
+    transform: translate(-2rem, 4rem);
+    box-shadow: 1px 10px 10px -1px black;
+  }
+  footer {
+    transform: translateY(7rem);
+    background-size: 15rem;
+  }
+  footer img {
+    transform: translateY(2rem);
   }
 }/*# sourceMappingURL=style.css.map */
